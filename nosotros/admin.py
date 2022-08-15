@@ -6,3 +6,8 @@ from .models import *
 
 class PuestosAdmin(admin.ModelAdmin):
     list_display= ('id', 'puestos')
+
+@admin.register(MisionVision)
+
+class MisionVisionAdmin(admin.ModelAdmin):
+    list_display= ('id', 'mision', 'vision')

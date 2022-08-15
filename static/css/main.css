@@ -1,9 +1,7 @@
-
-
-
-.carousel-inner {
-    max-height: 39 rem; 
-
+#carousel-style{
+    border-radius: 0.375rem
 }
 
-
+.texto-justificado{
+    text-align: justify;
+}

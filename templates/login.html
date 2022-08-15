@@ -66,7 +66,9 @@
           <img src="{% static 'img\perfil.png'%}" alt="imagen generica de perfil" style="margin-bottom: 10px; border: 10 px solid black;">
 
         
-          
+          {% include 'include/error_forms.html' %}
+    	  
+
           <div class="form-floating mb-3" style="width: 50%; margin:auto">
             <input type="text" class="form-control" id="floatingInput" placeholder="Nombre Usuario" name="username">
             <label for="floatingInput">Nombre de usuario</label>

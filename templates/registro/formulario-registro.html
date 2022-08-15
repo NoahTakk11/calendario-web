@@ -5,8 +5,8 @@
 {% block contenido %}
 
   <form method="POST">{% csrf_token %}
-
-    {{form.as_p}}
+    {% include 'include/error_forms.html' %}
+    {% include 'include/forms.html' %}
     <button type="submit">Crear</button>
 
   </form> 

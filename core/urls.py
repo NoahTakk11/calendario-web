@@ -40,8 +40,6 @@ urlpatterns = [
     path('quienes-somos/',include('nosotros.urls'), name='quienes-somos'),
     path('calendario/', include('eventos.urls')),
     path('evento/',include(('eventos.urls', 'evento'), namespace='evento'), name='detalle-evento'),
-    path('registro/', include('usuario.urls')),
-
-    
+    path('registro/', include('usuario.urls')),    
    
 ]

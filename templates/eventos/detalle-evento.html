@@ -5,12 +5,22 @@
         
 
         {% for evento in object_list %}
-            {{evento.foto}}
+            
             
             <div class="card" style="width: 80%; margin-left: 10%; border: 1px solid black; margin-bottom: 50px; margin-top: 50px;">
-                <div style="margin: auto;">
-                    <img src="{{evento.foto}}" class="card-img-top" alt="..." />
-                </div>
+                
+                {% if evento.foto %}
+                    <div style="margin: auto;">
+                        <img src="{{evento.foto.url}}" class="card-img-top" alt="..." />
+                    </div>
+                {% else %}
+                    <div style="margin: auto;">
+                        <img src="{% static 'img/imagen-eventos-default.jpg' %}" class="card-img-top" alt="..." />
+                    </div>
+                        
+                {% endif %}
+                    
+                
                 <div class="card-body">
                     <h5 class="card-title">{{evento.titulo_evento}}</h5>
                     <p class="card-text">{{evento.descripcion_evento}}</p>
@@ -31,8 +41,11 @@
                     {% endif %}
                 </div>
             </div>
+            
 
         {% endfor %}
+
+        {% include 'include/paginado.html' %}
 
 {% endblock contenido %}
 

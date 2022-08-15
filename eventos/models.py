@@ -18,7 +18,7 @@ class Evento(models.Model):
     hora_evento=models.CharField(max_length=5)
     modalidad_evento=models.CharField(max_length=50)
     descripcion_evento=models.TextField()
-    foto=models.ImageField(null=True, upload_to='static/')
+    foto=models.ImageField(null=True,blank=True, upload_to='fotos-eventos')
     id_categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
     asistencias=models.ManyToManyField(Usuario, blank=True, related_name='asistencias')
     

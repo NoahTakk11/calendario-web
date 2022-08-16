@@ -34,7 +34,7 @@
                     display: 'list-item',
                     color: 'green',
                     selectable: true,
-                    url: '{% url "evento:detalle-evento" %}'
+                    url: '{% url "eventos:evento-especifico" eventos.id %}'
                   
                 },
               {% endfor %}

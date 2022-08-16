@@ -6,7 +6,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.base import View
 from django.urls.base import reverse_lazy
-
+from django.urls import reverse
+from django.views.generic.detail import DetailView
 
 
 # Create your views here.
@@ -57,6 +58,16 @@ class ConfirmarAsistencia(LoginRequiredMixin, View):
 
         next =request.POST.get('next', '/')
         return HttpResponseRedirect(next)
+
+
+class RedirigirEvento(DetailView):
+    template_name='evento-seleccionado.html'
+    model=Evento
+
+    
+    
+    
+
 
 
     

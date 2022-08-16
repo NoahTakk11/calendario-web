@@ -11,3 +11,8 @@ class PuestosAdmin(admin.ModelAdmin):
 
 class MisionVisionAdmin(admin.ModelAdmin):
     list_display= ('id', 'mision', 'vision')
+
+@admin.register(Integrante)
+
+class IntegrantesAdmin(admin.ModelAdmin):
+    list_display= ('id', 'puesto_integrante', 'nombre_integrante')

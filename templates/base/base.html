@@ -29,18 +29,18 @@
 
   </head>
 
-  <body style="background-image:url('{% static 'img\FundaciónPueblo.jpg'%}')"> 
+  <body> 
     
     <header>
       
       <nav class="navbar navbar-expand-lg bg-primary">
           <div class="container-fluid">
-            <span class="text-white fs-5 fw-bold">Fundación Pueblo</span>
-          <!-- Logo-->  
+            <!-- Logo-->  
             <a class="navbar-brand" >   
               <a href="{% url 'home' %}">    
-              <img src="{% static 'img\Home.png'%}"   alt="logo">
+                <img src="{% static 'img\Home.png'%}"   alt="logo">
               </a> 
+              <span class="text-white fs-5 fw-bold">Fundación Pueblo</span>
             </a>
             
   
@@ -91,7 +91,7 @@
 
     </header>
     
-    <main class="container-fluid">
+    <main>
 
       {% block contenido  %}
           

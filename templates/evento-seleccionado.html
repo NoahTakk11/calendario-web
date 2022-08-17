@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %} 
+{%  load static %}
+
+{% block contenido %}
+    <div class="card" style="width: 80%; margin-left: 10%; border: 1px solid black; margin-bottom: 50px; margin-top: 50px;">
+                    
+        {% if evento.foto %}
+            <div style="margin: auto;">
+                <img src="{{evento.foto.url}}" class="card-img-top" alt="..." />
+            </div>
+        {% else %}
+            <div style="margin: auto;">
+                <img src="{% static 'img/imagen-eventos-default.jpg' %}" class="card-img-top" alt="..." />
+            </div>
+                
+        {% endif %}
+            
+        
+        <div class="card-body">
+            <h5 class="card-title">{{evento.titulo_evento}}</h5>
+            <p class="card-text">{{evento.descripcion_evento}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{evento.hora_evento}}</li>
+            <li class="list-group-item">{{evento.modalidad_evento}}</li>
+        </ul>
+        <div class="card-body">
+            
+            {% if user.is_authenticated %}
+                <span> {{evento.asistencias.all.count}} Asistencias Confirmadas</span>
+                <form method="POST" action="{% url 'evento:asistencias' pk=evento.pk %}">{% csrf_token %}
+                    <input type="hidden" name="next" value="{{request.path}}">
+                    <button type='submit' style="background-color: blue;color: brown;width: 130px;height: 40px;cursor: pointer;">Voy a Asistir</button>
+                </form>
+
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock contenido %}

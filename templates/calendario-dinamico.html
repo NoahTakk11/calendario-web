@@ -3,63 +3,57 @@
 {% block titulo %}Calendario de Eventos{% endblock %}
   
 {% block contenido %}
+<script>
 
-  
-      <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
 
-        document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-          var calendar = new FullCalendar.Calendar(calendarEl, {
+      themeSystem: 'bootstrap5',
+      headerToolbar: { start: 'prev', center:'title', end: 'next'},
+      views: {
+        dayGridMonth: {titleFormat: { year: 'numeric', month: 'short', day: 'numeric' }},titleRangeSeparator: {
+          hour: 'numeric',
+          minute: '2-digit',
+          meridiem: false
+        }},
 
-            themeSystem: 'bootstrap5',
-            headerToolbar: { start: 'prev', center:'title', end: 'next'},
-            views: {
-              dayGridMonth: {titleFormat: { year: 'numeric', month: 'short', day: 'numeric' }},titleRangeSeparator: {
-                hour: 'numeric',
-                minute: '2-digit',
-                meridiem: false
-              }},
+      initialView: 'dayGridMonth',
 
+      timeZone: 'America/Buenos_Aires',
 
-            initialView: 'dayGridMonth',
-
-            timeZone: 'America/Buenos_Aires',
-
-            events: [
-              {% for eventos in object_list %}
-                {
-                    title: "EVENTO",
-                    start: '{{eventos.fecha_inicio_evento | date:"Y-m-d"}}T{{eventos.hora_evento}}Z',
-                    end: '{{eventos.fecha_fin_evento | date:"Y-m-d"}}',
-                    display: 'list-item',
-                    color: 'green',
-                    selectable: true,
-                    url: '{% url "evento:detalle-evento" %}'
-                  
-                },
-              {% endfor %}
-            ],
+      events: [
+        {% for eventos in object_list %}
+          {
+              title: "EVENTO",
+              start: '{{eventos.fecha_inicio_evento | date:"Y-m-d"}}T{{eventos.hora_evento}}Z',
+              end: '{{eventos.fecha_fin_evento | date:"Y-m-d"}}',
+              display: 'list-item',
+              color: 'green',
+              selectable: true,
+              url: '{% url "eventos:evento-especifico" eventos.id %}'
             
-             
-          });
-          
-          calendar.render();
-          calendar.setOption('locale','es');
-        });
+          },
+        {% endfor %}
+      ],
+      
+        
+    });
+    
+    calendar.render();
+    calendar.setOption('locale','es');
+  });
 
-      </script>
+</script>
 
-      <div>
-        <h1 style='margin-left:100px; margin-top:50px;'>CALENDARIO FUNDACIÓN PUEBLO</h1>
-        <div id='calendar' class='justify-content-around' style='padding: 10px; margin: 100px; margin-top:-10px; border-color: black; border-width: 40px; display: flex;'></div>
-      </div>
+<div class="container-fluid my-3
+ w-75">
+  <h2 class="text-center" style="margin: 30px 0 30px 0;">CALENDARIO FUNDACIÓN PUEBLO</h2>
+  <div id='calendar' class='justify-content-center' style='padding: 10px; background-color:white; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem; display: flex;'></div>
+</div>
       
 {% endblock%}
-
 
 {% block otro_bloque %}
   
 {% endblock otro_bloque %}
-  
-    
-  

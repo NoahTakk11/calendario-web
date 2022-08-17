@@ -29,7 +29,7 @@
 
   </head>
 
-  <body> 
+  <body style="display:flex; flex-direction:column; min-height: 100vh; justify-content: space-between; background-image:url('{% static 'img\FundaciónPueblo.jpg'%}')"> 
     
     <header>
       
@@ -37,10 +37,10 @@
           <div class="container-fluid">
             <!-- Logo-->  
             <a class="navbar-brand" >   
-              <a href="{% url 'home' %}">    
+              <a href="{% url 'home' %}" style="text-decoration: none;">    
                 <img src="{% static 'img\Home.png'%}"   alt="logo">
+                <span class="text-white fs-5 fw-bold" >Fundación Pueblo</span>
               </a> 
-              <span class="text-white fs-5 fw-bold">Fundación Pueblo</span>
             </a>
             
   
@@ -110,11 +110,11 @@
   </body>
 
   <!--pie de pagina -->
-  <footer class="bg-dark text-white pt-3">
+  <footer class="bg-dark text-white pt-3" style="bottom: 0; width: 100%;">
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 0%;">
 
-      <nav class="row">
+      <nav class="row" style="margin-bottom: 0%;">
 
         <a href="#" class="col-3 text-reset text-uppercase d-flex align-items-center">
           Fundación Pueblo

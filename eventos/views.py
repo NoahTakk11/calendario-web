@@ -29,7 +29,7 @@ class Calendario(ListView):
 class MostrarEvento(ListView):
     template_name='eventos/detalle-evento.html'
     model=Evento
-    paginate_by=1
+    paginate_by=3
 
     def get_queryset(self):
         queryset=self.model.objects.all()

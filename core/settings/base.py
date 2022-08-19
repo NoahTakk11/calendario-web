@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'eventos',
     'colorfield',
     'contacto',
+    'django_filters',
     
 
 ]

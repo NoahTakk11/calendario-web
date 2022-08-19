@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+
+
+{% block contenido %}
+  
+
+    <form method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for obj in filter.qs %}
+        <h1>{{ obj.titulo_evento }}</h1> 
+        <p>{{ obj.descripcion_evento }}</p>
+    {% endfor %}
+
+
+{% endblock contenido %}

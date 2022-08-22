@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import Evento
+from .models import Evento, Categoria
 from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, HttpResponse
@@ -8,6 +8,8 @@ from django.views.generic.base import View
 from django.urls.base import reverse_lazy
 from django.urls import reverse
 from django.views.generic.detail import DetailView
+from .forms import EventoFilter
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -63,6 +65,15 @@ class ConfirmarAsistencia(LoginRequiredMixin, View):
 class RedirigirEvento(DetailView):
     template_name='evento-seleccionado.html'
     model=Evento
+
+
+
+ 
+def lista_eventos(request):
+    f = EventoFilter(request.GET, queryset=Evento.objects.all())
+    return render(request, 'filtrado.html', {'filter': f})
+
+
 
     
     

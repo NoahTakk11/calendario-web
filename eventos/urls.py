@@ -9,6 +9,7 @@ urlpatterns = [
     path('evento/',MostrarEvento.as_view(), name='detalle-evento'),
     path('evento/<int:pk>/asistencias',ConfirmarAsistencia.as_view(), name='asistencias'),
     path('evento/<int:pk>/',RedirigirEvento.as_view(), name='evento-especifico'),
+    path('evento/filtrado',views.lista_eventos, name='evento-filtrado'),
 ]
 
 

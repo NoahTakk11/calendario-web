@@ -2,11 +2,12 @@
 
 {%  load static %}
 
-{% block titulo %}Contacto{% endblock %}
+{% block titulo %}Fundación Pueblo{% endblock %}
 
 
 
 {% block contenido %}
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,10 +29,32 @@
         <br>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
+=======
+
+<center>
+    <div class="my-2" style="width: 50%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
+        <h3 style="margin-bottom:0px">FORMULARIO DE CONTACTO</h3>
+        <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
+
+            <form  method="post" >
+                {% csrf_token %}
+                <div class="form-floating mb-3">            
+                    <input type="text" name="nombre" id="floatingInput" class="form-control" placeholder="Nombre completo" required>
+                    <label for="floatingInput">Nombre completo</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" name="email" id="floatingInput" class="form-control" placeholder="Correo electrónico" required>
+                    <label for="floatingInput">Correo electrónico</label>
+                </div>
+                <!-- Estilo de formulario anterior -->
+                <!-- <label>Su mensaje</label> -->
+                <!-- <input type="text" name="mensaje" class="form-control" required> -->
+                <textarea name="mensaje" class="form-control" style="width: 100%; margin-bottom: 10px" rows="10" placeholder="Escriba su consulta" required maxlength="10000"></textarea>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+>>>>>>> 6165ddba2942e8317792f1b6c969e3ff90991760
     </div>
-    </center>
-    
-</body>
-</html>
+</center>
 
 {% endblock %}

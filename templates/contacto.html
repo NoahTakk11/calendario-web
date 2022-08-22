@@ -14,10 +14,10 @@
 </head>
 <body>
     <center>
-    <div style="width: 50% ;">
+    <div  class='container' style="width:60%;">
     <h3>Formulario de contacto</h3>
     <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
-    <form  method="post" >
+    <form  method="post" class="was-validated" >
         {% csrf_token %}
         <label>Nombre completo</label>
         <input type="text" name="nombre" class="form-control" required>

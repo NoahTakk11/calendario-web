@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'eventos',
     'colorfield',
     'contacto',
+    'recursos',
+    
     
 
 ]

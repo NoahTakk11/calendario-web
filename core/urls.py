@@ -21,19 +21,21 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 
+from recursos import views
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.Inicio.as_view(), name='home'),
+    path('',Inicio.as_view(), name='home'),
     # auth_views.LoginView.as_view --> recive el nombre del template para poder utilizar las funciones de login incorporadas de django
     path('inicio-sesion/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('cerrar-sesion/', auth_views.logout_then_login, name='logout'),
-    
-    
+
     path('recursos/', Recursos.as_view(), name='recursos'),
     path('contacto/', Contacto.as_view(), name='contacto'),
     path('mis-eventos/', MisEventos.as_view(), name='mis_eventos'),
+
 
     #includes
     path('quienes-somos/',include('nosotros.urls'), name='quienes-somos'),
@@ -41,6 +43,10 @@ urlpatterns = [
     path('evento/',include(('eventos.urls', 'evento'), namespace='evento'), name='detalle-evento'),
     path('registro/', include('usuario.urls')),
     path('contacto/', include('contacto.urls')),
+    path('recursos/', include('recursos.urls')),
+
+   
+    
     
     
 

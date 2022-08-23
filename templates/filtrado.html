@@ -4,12 +4,16 @@
 
 {% block contenido %}
 
-    <a href="{% url 'eventos:detalle-evento' %}"><button>VOLVER</button></a>
-  
+<div class="form-signin w-50 m-auto text-center">
+    <a href="{% url 'eventos:detalle-evento' %}"><button style="background-color: rgb(13, 110, 253);color: white; margin:10px">VOLVER</button></a>
+
+    
+    
 
     <form method="get">
         {{ filter.form.as_p }}
-        <input type="submit" />
+        <input class="w-10 btn btn-sm btn-primary" type="submit" style="margin:10px;" />
+        
     </form>
     {% for obj in filter.qs %}
         <h1>{{ obj.titulo_evento }}</h1> 

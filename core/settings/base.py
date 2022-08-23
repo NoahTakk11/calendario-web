@@ -54,9 +54,9 @@ INSTALLED_APPS = [
     'eventos',
     'colorfield',
     'contacto',
-    'django_filters',
-    
+    'recursos',
 
+    'django_filters',
 ]
 
 #================================ para personalizar el admin de django.

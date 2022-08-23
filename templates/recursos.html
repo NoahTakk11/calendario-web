@@ -1,11 +1,20 @@
 {% extends 'base/base.html' %}
 {%  load static %}
 
-{% block titulo %}Fundación Pueblo{% endblock %}
+
+{% block titulo %} Recursos {% endblock %}
+
 
 {% block contenido  %}
-<div class="container">
-    <p class="text-center fs-2">Recursos</p> 
-<div/>
+<h3>Sección de Recursos</h3>
+
+{% for recursos in recursos %}
+<h2>{{recursos.titulo}}</h2>
+<P>{{recursos.descripcion}}</P>
+<a href="{{recursos.url}}">{{recursos.url}}</a>
+
+{% endfor %}
+
+
 
 {% endblock %}

@@ -73,6 +73,8 @@
               
               {% if user.is_authenticated %}
                 <form>
+                  
+                  <span class="text-white fs-5" >{{ user.username }}</span>
                   <a href="{% url 'logout' %}">
                   <button type="button" class="btn btn-outline-light" style="margin: 10px;">Salir</button>
                   </a>

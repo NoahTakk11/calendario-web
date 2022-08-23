@@ -1,10 +1,12 @@
 from http.client import HTTPResponse
 from django.shortcuts import render
 from .models import Contacto
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 
 # Create your views here.
 def contacto(request):
+    next=request.POST.get('next', '/')
     if request.method == 'POST':
         contacto = Contacto()
         nombre=request.POST.get('nombre')
@@ -14,6 +16,8 @@ def contacto(request):
         contacto.email=email
         contacto.mensaje=mensaje
         contacto.save()
-        return HttpResponse('<h1>GRACIAS POR CONTACTARNOS</h1>')
+        messages.success(request, 'Recibimos tu mensaje, te responderemos en breve!')
+        
+        return HttpResponseRedirect(next)
     
     return render(request,'contacto.html')

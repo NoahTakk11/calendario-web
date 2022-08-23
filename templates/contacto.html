@@ -51,9 +51,22 @@
                 <!-- <label>Su mensaje</label> -->
                 <!-- <input type="text" name="mensaje" class="form-control" required> -->
                 <textarea name="mensaje" class="form-control" style="width: 100%; margin-bottom: 10px" rows="10" placeholder="Escriba su consulta" required maxlength="10000"></textarea>
+                <input type="hidden" name="next" value="{{request.path}}">
                 <button type="submit" class="btn btn-primary">Enviar</button>
+
+                {% if messages %}
+                    
+                        {% for message in messages %}
+                            <div {% if message.tags %} class="{{ message.tags }}" {% endif %} >
+                                <div class="alert alert-success" role="alert">{{ message }}</div>
+                            </div>
+                        {% endfor %}
+                     
+                {% endif %}
             </form>
     </div>
 </center>
+
+
 
 {% endblock %}

@@ -13,6 +13,8 @@ urlpatterns = [
     path('evento/panel',views.mostrar_panel, name='panel'),
     path('evento/panel-eventos',CrearEvento.as_view(), name='panel-eventos'),
     path('evento/panel-categorias',CrearCategoria.as_view(), name='panel-categorias'),
+    path('evento/<int:pk>/panel-actualizar-eventos',EventoUpdateView.as_view(), name='panel-actualizar-eventos'),
+    path('evento/<int:pk>/panel-actualizar-categorias',CategoriaUpdateView.as_view(), name='panel-actualizar-categorias'),
 ]
 
 

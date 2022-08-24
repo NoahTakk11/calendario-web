@@ -4,13 +4,15 @@
 
 {% block contenido %}
     {% for e in eventos %}
-        {{e.titulo_evento}}
+        {{e.titulo_evento}} 
+        <a href="{% url 'eventos:panel-actualizar-eventos' pk=e.pk %}">editar</a>
     {% endfor %}
     <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-success">Crear Nuevo Evento</button></a>
     
     <br><br><br>
     {% for c in categorias %}
         {{c.nombre_categoria}}
+        <a href="{% url 'eventos:panel-actualizar-categorias' pk=c.pk %}">editar</a>
     {% endfor %}
     <a href="{% url 'eventos:panel-categorias' %}"><button type="button" class="btn btn-success">Crear Nueva Categoria</button></a>
     

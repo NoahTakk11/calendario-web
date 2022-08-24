@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    
+    {% if user.is_superuser %}
+
+        <form method="POST"> {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit" class="btn btn-success">Crear</button>
+
+
+        </form>
+
+        <a href="{% url 'eventos:panel' %}"><button type="button" class="btn btn-success">Volver</button></a>
+
+        
+        
+    {% endif %}
+        
+    
+    
+{% endblock contenido %}
+    

@@ -40,16 +40,35 @@
         
                         
                         {% if user.is_authenticated %}
-                            <div class="card-body" style="background-color: whitesmoke;">
+                            
+                            {% if evento.asistencias.all.count >= 1 %}
 
-                                <span> {{evento.asistencias.all.count}} Asistencias Confirmadas</span>
+                                <div class="card-body" style="background-color: whitesmoke;">
 
-                                <form method="POST" action="{% url 'evento:asistencias' pk=evento.pk %}">{% csrf_token %}
-                                    <input type="hidden" name="next" value="{{request.path}}">
-                                    <button type='submit' style="background-color: rgb(13, 110, 253);color: white;width: 130px;height: 40px;cursor: pointer;">Voy a Asistir</button>
-                                </form>  
-                                  
-                            </div>
+                                    <span> {{evento.asistencias.all.count}} Asistencias Confirmadas</span>
+
+                                    <form method="POST" action="{% url 'evento:asistencias' pk=evento.pk %}">{% csrf_token %}
+                                        <input type="hidden" name="next" value="{{request.path}}">
+                                        <button type='submit' style="background-color: red;color: white;width: 130px;height: 40px;cursor: pointer;">Me arrpentí</button>
+                                    </form>  
+                                    
+                                </div>
+                            {% else %}
+
+                                <div class="card-body" style="background-color: whitesmoke;">
+
+                                    <span> {{evento.asistencias.all.count}} Asistencias Confirmadas</span>
+
+                                    <form method="POST" action="{% url 'evento:asistencias' pk=evento.pk %}">{% csrf_token %}
+                                        <input type="hidden" name="next" value="{{request.path}}">
+                                        <button type='submit' style="background-color: rgb(13, 110, 253);color: white;width: 130px;height: 40px;cursor: pointer;">Voy a Asistir</button>
+                                    </form>  
+                                    
+                                </div>
+                                
+                            {% endif %}
+                                
+                            
                         {% endif %}
         
                     </div>

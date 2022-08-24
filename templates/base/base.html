@@ -72,13 +72,31 @@
               </ul>
               
               {% if user.is_authenticated %}
-                <form>
+                
+                {% if user.is_superuser %}
+
+                  <form>
+                    
+                    <a href="{% url 'eventos:panel' %}"><span class="text-white fs-5" >{{ user.username }}</span></a>
+                    <a href="{% url 'logout' %}">
+                    <button type="button" class="btn btn-outline-light" style="margin: 10px;">Salir</button>
+                    </a>
+                  </form>
+
+                {% else %}
+
+                  <form>
+                      
+                    <span class="text-white fs-5" >{{ user.username }}</span>
+                    <a href="{% url 'logout' %}">
+                    <button type="button" class="btn btn-outline-light" style="margin: 10px;">Salir</button>
+                    </a>
+                  </form>
+
+
+                {% endif %}
                   
-                  <span class="text-white fs-5" >{{ user.username }}</span>
-                  <a href="{% url 'logout' %}">
-                  <button type="button" class="btn btn-outline-light" style="margin: 10px;">Salir</button>
-                  </a>
-                </form>
+                
               {% else %}
                 <form>
                   <a href="{% url 'login' %}">

@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    {% for e in eventos %}
+        {{e.titulo_evento}}
+    {% endfor %}
+    <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-success">Crear Nuevo Evento</button></a>
+    
+    <br><br><br>
+    {% for c in categorias %}
+        {{c.nombre_categoria}}
+    {% endfor %}
+    <a href="{% url 'eventos:panel-categorias' %}"><button type="button" class="btn btn-success">Crear Nueva Categoria</button></a>
+    
+    
+    
+{% endblock contenido %}
+    

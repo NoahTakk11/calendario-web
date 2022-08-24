@@ -4,18 +4,29 @@
 
 {% block contenido %}
 
-<div class="form-signin w-50 m-auto text-center">
-    <a href="{% url 'eventos:detalle-evento' %}"><button style="background-color: rgb(13, 110, 253); margin:10px ;color: white;">VOLVER</button></a>
+    <div class="container-fluid my-2 d-flex flex-row-reverse">
+    <a href="{% url 'eventos:detalle-evento' %}"><button class="w-10 btn btn-sm btn-primary" type="submit" style="margin:30px;">Volver a lista de eventos</button></a>
 
     
     
 
-    <form method="get">
+    <form method="get" class="row g-3">
+        <div class="col-auto">
+        
         {{ filter.form.as_p }}
-        <input class="w-10 btn btn-sm btn-primary" type="submit" style="margin:10px;" />
+
+        </div>
+       
+        <!-- Estilos Propios 
+        <input class="w-10 btn btn-sm btn-primary" type="submit" style="margin:10px;">
+        -->
+        <div class="col-auto">
+        <button class="w-10 btn btn-sm btn-primary" type="submit";">Filtrar</button>
+        </div>
         
     </form>
-</div>
+    </div>
+
     {% for obj in filter.qs %}
         <h1>{{ obj.titulo_evento }}</h1> 
         <p>{{ obj.descripcion_evento }}</p>

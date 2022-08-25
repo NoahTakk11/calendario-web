@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+    <form method="post">{% csrf_token %}
+        <p>Está seguro que quiere eleminar: "{{ object }}"?</p>
+        <input type="submit" value="Eliminar">
+    </form>
+    <a href="{% url 'eventos:panel' %}"><button type="button" class="btn btn-success">Volver</button></a>
+
+{% endblock contenido %}

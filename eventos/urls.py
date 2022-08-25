@@ -15,6 +15,8 @@ urlpatterns = [
     path('evento/panel-categorias',CrearCategoria.as_view(), name='panel-categorias'),
     path('evento/<int:pk>/panel-actualizar-eventos',EventoUpdateView.as_view(), name='panel-actualizar-eventos'),
     path('evento/<int:pk>/panel-actualizar-categorias',CategoriaUpdateView.as_view(), name='panel-actualizar-categorias'),
+    path('evento/<int:pk>/panel-borrar-eventos',EventoDeleteView.as_view(), name='panel-borrar-eventos'),
+    path('evento/<int:pk>/panel-borrar-categorias',CategoriaDeleteView.as_view(), name='panel-borrar-categorias'),
 ]
 
 

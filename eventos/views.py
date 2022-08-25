@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.views.generic.detail import DetailView
 from .forms import EventoFilter
 from django.views.generic import TemplateView, CreateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from .forms import *
 
 # Create your views here.
@@ -37,6 +37,8 @@ class MostrarEvento(ListView):
         queryset=self.model.objects.all()
         return queryset
 
+#=================================================================================================
+#=================================================================================================
 
 class ConfirmarAsistencia(LoginRequiredMixin, View):
 
@@ -63,7 +65,8 @@ class RedirigirEvento(DetailView):
     model=Evento
 
 
-
+#=================================================================================================
+#=================================================================================================
 
 def mostrar_panel(request):
     eventos = Evento.objects.all()
@@ -75,9 +78,6 @@ def mostrar_panel(request):
         'eventos':eventos,
         'categorias':categorias
     }
-
-
-
     return render(request, template_name, context=ctx)
 
 
@@ -89,6 +89,8 @@ class CrearEvento(CreateView):
     def get_success_url(self, **kwargs):
         return reverse('evento:panel')
 
+
+
 class EventoUpdateView(UpdateView):
     template_name="panel/panel-actualizar-eventos.html"
     model=Evento
@@ -98,6 +100,15 @@ class EventoUpdateView(UpdateView):
     def get_success_url(self, **kwargs):
         return reverse('eventos:panel')
 
+class EventoDeleteView(DeleteView):
+    model = Evento
+    template_name = "panel/panel-borrar.html"
+
+    def get_success_url(self, **kwargs):
+        return reverse('eventos:panel')
+
+
+
 class CrearCategoria(CreateView):
     model= Categoria
     form_class= CategoriaForm
@@ -106,17 +117,24 @@ class CrearCategoria(CreateView):
     def get_success_url(self, **kwargs):
         return reverse('evento:panel-categorias')
 
+
 class CategoriaUpdateView(UpdateView):
     template_name="panel/panel-actualizar-categorias.html"
     model=Categoria
     form_class = CategoriaForm
 
+    def get_success_url(self, **kwargs):
+        return reverse('eventos:panel')
+
+class CategoriaDeleteView(DeleteView):
+    model = Categoria
+    template_name = "panel/panel-borrar.html"
 
     def get_success_url(self, **kwargs):
         return reverse('eventos:panel')
 
 
- 
+
 def lista_eventos(request):
     f = EventoFilter(request.GET, queryset=Evento.objects.all())
     return render(request, 'filtrado.html', {'filter': f})

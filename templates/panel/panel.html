@@ -3,20 +3,35 @@
 
 
 {% block contenido %}
+<center>
+<div class="my-2" style="width: 50%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
+    <h3 style="margin-bottom:10px">CREAR EVENTOS Y CATEGOIAS</h3>
+    
+    <h4>Eventos</h4>
     {% for e in eventos %}
-        {{e.titulo_evento}} 
-        <a href="{% url 'eventos:panel-actualizar-eventos' pk=e.pk %}">editar</a>
+    <div>
+    <h6>{{e.titulo_evento}}</h6>
+        <a href="{% url 'eventos:panel-actualizar-eventos' pk=e.pk %}"><button type="button" class="badge rounded-pill text-bg-primary">editar</button></a>
     {% endfor %}
-    <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-success">Crear Nuevo Evento</button></a>
+    <br><br>
+    <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-primary">Crear nuevo evento</button></a>
+    </div>
     
     <br><br><br>
+
+    <h4>Categorías</h4>
     {% for c in categorias %}
-        {{c.nombre_categoria}}
-        <a href="{% url 'eventos:panel-actualizar-categorias' pk=c.pk %}">editar</a>
+    <div>
+    <h6>{{c.nombre_categoria}}</h6>
+        
+        <a href="{% url 'eventos:panel-actualizar-categorias' pk=c.pk %}"><button type="button" class="badge rounded-pill text-bg-primary">editar</button></a>
     {% endfor %}
-    <a href="{% url 'eventos:panel-categorias' %}"><button type="button" class="btn btn-success">Crear Nueva Categoria</button></a>
+    <br><br>
+    <a href="{% url 'eventos:panel-categorias' %}"><button type="button" class="btn btn-primary">Crear nueva categoría</button></a>
+    </div>
     
-    
+</div>
+</center>
     
 {% endblock contenido %}
     

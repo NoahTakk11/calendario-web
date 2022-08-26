@@ -29,7 +29,7 @@
                     <td>{{ recurso.id }}</td>
                     <td>{{ recurso.titulo }}</td>
                     <td>{{ recurso.descripcion }}</td>
-                    <td>{{ recurso.url }}</td>
+                    <td><a href="{{ recurso.url }}"target="_blank">{{ recurso.url }}</a></td>
                     <td> <a name="" id="" class="btn btn-primary" href="{% url 'editar' recurso.id %}" role="button">Editar</a> | <a name="" id="" class="btn btn-primary" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
                 </tr>
                 {% endfor %}

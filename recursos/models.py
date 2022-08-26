@@ -7,4 +7,5 @@ class Recursos(models.Model):
     url=models.URLField(verbose_name='Link de acceso')
 
     def __str__(self):
-        return f'{self.titulo} {self.descripcion} {self.url}'
+        fila='Título: ' + self.titulo + '-' + 'Descripción: ' + self.descripcion + '-' + 'url: ' + self.url
+        return fila

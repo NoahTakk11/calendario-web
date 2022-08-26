@@ -4,17 +4,45 @@
 
 {% block titulo %} Recursos {% endblock %}
 
-
 {% block contenido  %}
-<h3>Sección de Recursos</h3>
+Sección de Recursos
 
-{% for recursos in recursos %}
-<h2>{{recursos.titulo}}</h2>
-<P>{{recursos.descripcion}}</P>
-<a href="{{recursos.url}}">{{recursos.url}}</a>
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar Recurso</a>
+        
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Recursos</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>url</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td> <a name="" id="" class="btn btn-primary" href="{% url 'editar' %}" role="button">Editar</a> | <a name="" id="" class="btn btn-primary" href="#" role="button">Borrar</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>  
+</div>
+
+{% for recurso in recursos %}
+<h2>{{recurso.titulo}}</h2>
+<P>{{recurso.descripcion}}</P>
+<a href="{{recursos.url}}">{{recurso.url}}</a>
 
 {% endfor %}
-
-
 
 {% endblock %}

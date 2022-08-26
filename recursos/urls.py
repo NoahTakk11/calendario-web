@@ -5,10 +5,13 @@ from . import views
 from recursos import views
 
 
-app_name='recursos'
+
+
 
 urlpatterns=[
-    path('recursos/', views.recursos, name='recursos'),
+    path('recursos', views.recursos, name='recursos'),
+    path('recursos/crear', views.crear, name= 'crear'),
+    path('recursos/editar', views.crear, name= 'editar'),
 ]
  
  

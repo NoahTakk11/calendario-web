@@ -45,6 +45,8 @@ urlpatterns = [
     path('contacto/', include('contacto.urls')),
     path('recursos/', include('recursos.urls')),
 
+    
+
    
     
     

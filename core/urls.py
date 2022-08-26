@@ -44,5 +44,5 @@ urlpatterns = [
     path('registro/', include('usuario.urls')),
     path('contacto/', include('contacto.urls')),
     path('recursos/', include('recursos.urls')),
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

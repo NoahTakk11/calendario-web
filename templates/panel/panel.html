@@ -46,16 +46,13 @@
                         <a href="{% url 'eventos:panel-borrar-eventos' pk=e.pk %}"><button type="button" class="badge rounded-pill text-bg-danger">Eliminar</button></a></li>
                     </div>
                 </ul>
-                
-            
             {% endfor %}
-        
             <br>
-            <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-primary">Crear nuevo evento</button></a>    
-        
-            
+            <a href="{% url 'eventos:panel-eventos' %}"><button type="button" class="btn btn-primary">Crear nuevo evento</button></a> 
         </div>
     </center>
+
+    
 
 {% else %}
 

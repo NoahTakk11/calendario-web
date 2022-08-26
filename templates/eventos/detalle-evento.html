@@ -26,6 +26,16 @@
                         {% endif %}
         
                         <div class="card-body" style="height: 150px; background-color: whitesmoke; overflow-x: hidden;">
+                            
+                            {% if evento.fecha_inicio_evento == evento.fecha_fin_evento %}
+                                <h5 class="card-title"> El {{evento.fecha_inicio_evento}}</h5>
+
+                            {% else %}
+                                <h5 class="card-title"> Del {{evento.fecha_inicio_evento}} al {{evento.fecha_fin_evento}}</h5>
+                            {% endif %}
+
+                                
+                            
                             <h3 class="card-title">{{evento.titulo_evento}}</h3>
                             <p class="card-text">{{evento.descripcion_evento}}</p>
                         </div>

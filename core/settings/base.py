@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'usuario.Usuario'
 
 LOGIN_URL = '/inicio-sesion'
-LOGIN_REDIRECT_URL = '/mis-eventos'
+LOGIN_REDIRECT_URL = '/'
 #=========================================
 
 

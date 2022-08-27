@@ -7,15 +7,22 @@
 {% block contenido  %}
 
 
+<center>
+    <div class="container-fluid my-3 w-75">
+        <h2 class="text-center" style="margin-top: 30px;">RECURSOS</h2>
+    </div>
 
-<div class="card">
+    <div class="my-2" style="width: 80%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
+    <div class="card">
+        
     {% if user.is_superuser %}
     <div class="card-header">
-        <a name="" id="" class="btn btn-dark" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
+        
+        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
     </div>
     {% endif %}
     <div class="card-body">
-        <h4 class="card-title">Recursos</h4>
+        <h4 class="card-title">Recursos disponibles</h4>
         <table class="table">
             <thead>
                 <tr>
@@ -52,6 +59,8 @@
         
     </div>  
 </div>
+</div>
+</center>
 
 
 

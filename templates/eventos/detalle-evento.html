@@ -4,9 +4,13 @@
 {% block titulo %}Fundación Pueblo{% endblock %}
 
 {% block contenido %}
+<div class="container-fluid my-3 w-75">
+    <h2 class="text-center" style="margin-top: 30px;">EVENTOS</h2>
+</div>
 
-    <div class="container-fluid my-2 d-flex flex-row-reverse">
-        <a href="{% url 'eventos:evento-filtrado' %}"><button class="w-10 btn btn-sm btn-primary"  style="margin:10px;">Filtrar por categorías</button></a>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'eventos:evento-filtrado' %}"><button class="w-10 btn btn-sm btn-primary "  style="margin:10px;">Filtrar por categorías</button></a>
     </div>
 
     <div class="container-fluid text-center my-2">

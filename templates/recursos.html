@@ -41,7 +41,7 @@
                     <td><a href="{{ recurso.url }}"target="_blank">{{ recurso.url }}</a></td>
 
                     {% if user.is_superuser %}
-                    <td> <a name="" id="" class="btn btn-success" href="{% url 'editar' recurso.id %}" role="button">Editar</a> | <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
+                    <td> <a name="" id="" class="btn btn-success" href="{% url 'editar' recurso.id %}" role="button">Editar</a> <br></br> <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
                     {% endif %}
                          
                 </tr>

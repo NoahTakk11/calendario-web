@@ -15,14 +15,8 @@
     <div class="my-2" style="width: 80%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
     <div class="card">
         
-    {% if user.is_superuser %}
-    <div class="card-header">
-        
-        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
-    </div>
-    {% endif %}
     <div class="card-body">
-        <h4 class="card-title">Recursos disponibles</h4>
+        
         <table class="table">
             <thead>
                 <tr>
@@ -47,15 +41,29 @@
                     <td>{{ recurso.descripcion }}</td>
                     <td><a href="{{ recurso.url }}"target="_blank">{{ recurso.url }}</a></td>
 
+                   
+
                     {% if user.is_superuser %}
-                    <td> <a name="" id="" class="btn btn-success" href="{% url 'editar' recurso.id %}" role="button">Editar</a> <br></br> <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
+                    
+                    <td>  <li class="list-group-item"><a href="{% url 'editar' recurso.id %}" ><button type="button" class="badge rounded-pill text-bg-success">Editar</button></a>
+                            <a href="{% url 'eliminar' recurso.id %}"><button type="button" class="badge rounded-pill text-bg-danger">Eliminar</button></a></li></td>
+                        
                     {% endif %}
+
+                    
+
                          
                 </tr>
                 
                 {% endfor %}
             </tbody>
         </table>
+        {% if user.is_superuser %}
+        <div class="card-header">
+            
+            <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
+        </div>
+        {% endif %}
         
     </div>  
 </div>

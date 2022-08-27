@@ -11,7 +11,7 @@
 <div class="card">
     {% if user.is_superuser %}
     <div class="card-header">
-        <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
+        <a name="" id="" class="btn btn-dark" href="{% url 'crear' %}" role="button">Agregar Recurso</a>    
     </div>
     {% endif %}
     <div class="card-body">
@@ -41,7 +41,7 @@
                     <td><a href="{{ recurso.url }}"target="_blank">{{ recurso.url }}</a></td>
 
                     {% if user.is_superuser %}
-                    <td> <a name="" id="" class="btn btn-primary" href="{% url 'editar' recurso.id %}" role="button">Editar</a> | <a name="" id="" class="btn btn-primary" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
+                    <td> <a name="" id="" class="btn btn-success" href="{% url 'editar' recurso.id %}" role="button">Editar</a> | <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' recurso.id %}" role="button">Borrar</a></td>
                     {% endif %}
                          
                 </tr>

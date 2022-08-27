@@ -15,11 +15,14 @@
             
                 <ul class="list-group list-group-horizontal">
                     <div class="form-signin w-50 m-auto text-center">
-                    <li class="list-group-item"><h6>{{c.nombre_categoria}}</h6></li>
+                    <h6>{{c.nombre_categoria}}</h6>
+                    <br>
                     </div>
+                   
                     <div class="form-signin w-50 m-auto text-center">
-                    <li class="list-group-item"><a href="{% url 'eventos:panel-actualizar-categorias' pk=c.pk %}"><button type="button" class="badge rounded-pill text-bg-success">Editar</button></a>
-                        <a href="{% url 'eventos:panel-borrar-categorias' pk=c.pk %}"><button type="button" class="badge rounded-pill text-bg-danger">Eliminar</button></a></li>
+                    <a href="{% url 'eventos:panel-actualizar-categorias' pk=c.pk %}"><button type="button" class="btn btn-success">Editar</button></a>
+                        
+                        <a href="{% url 'eventos:panel-borrar-categorias' pk=c.pk %}"><button type="button" class="btn btn-danger">Eliminar</button></a>
                     </div>
                 </ul>
         
@@ -39,11 +42,14 @@
                 
                 <ul class="list-group list-group-horizontal">
                     <div class="form-signin w-50 m-auto text-center">
-                    <li class="list-group-item"><h6>{{e.titulo_evento}}</h6></li>
+                    <h6>{{e.titulo_evento}}</h6>
+                    <br>
                     </div>
+                    
                     <div class="form-signin w-50 m-auto text-center">
-                    <li class="list-group-item"><a href="{% url 'eventos:panel-actualizar-eventos' pk=e.pk %}"><button type="button" class="badge rounded-pill text-bg-success">Editar</button></a>
-                        <a href="{% url 'eventos:panel-borrar-eventos' pk=e.pk %}"><button type="button" class="badge rounded-pill text-bg-danger">Eliminar</button></a></li>
+                        <a href="{% url 'eventos:panel-actualizar-eventos' pk=e.pk %}"><button type="button" class="btn btn-success">Editar</button></a>
+
+                        <a href="{% url 'eventos:panel-borrar-eventos' pk=e.pk %}"><button type="button" class="btn btn-danger">Eliminar</button></a>
                     </div>
                 </ul>
             {% endfor %}

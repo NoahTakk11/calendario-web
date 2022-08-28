@@ -6,8 +6,8 @@
 
 {% if user.is_superuser %}
     <center>
-        <div class="my-2" style="width: 50%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
-            <h3 style="margin-bottom:10px">CREAR CATEGORIAS Y EVENTOS</h3>
+        <div class="my-2 " style="width: 50%; background-color: white; padding: 10px; border: 1px solid rgb(13, 110, 253); border-radius: 0.375rem;">
+            <h3 class="text-center" style="margin-bottom:10px">Crear categorías y eventos</h3>
                 
             <h4>Categorías</h4>
             {% for c in categorias %}
@@ -15,7 +15,7 @@
             
                 <ul class="list-group list-group-horizontal">
                     <div class="form-signin w-50 m-auto text-center">
-                    <h6>{{c.nombre_categoria}}</h6>
+                    <h5>{{c.nombre_categoria}}</h5>
                     <br>
                     </div>
                    
@@ -42,7 +42,7 @@
                 
                 <ul class="list-group list-group-horizontal">
                     <div class="form-signin w-50 m-auto text-center">
-                    <h6>{{e.titulo_evento}}</h6>
+                    <h5>{{e.titulo_evento}}</h5>
                     <br>
                     </div>
                     

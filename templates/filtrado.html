@@ -5,7 +5,7 @@
 
 {% block contenido %}
 <div class="container-fluid my-3 w-75">
-    <h2 class="text-center" style="margin-top: 30px;">EVENTOS POR CATEGORIA</h2>
+    <h2 class="text-center style="margin-top: 30px;">Eventos por categoría</h2>
 </div>
 
 <div class="container-fluid d-flex flex-column my-2" style="min-height: 70vh">
@@ -29,6 +29,7 @@
                     <div class="card" style="border: 1px solid rgb(13, 110, 253);">                
                         
                         <div class="card-body" style="height: 150px; background-color: whitesmoke; overflow-x: hidden;">
+                            <h5 class="card-title"> El {{obj.fecha_inicio_evento}}</h5>
                             <h4 class="card-title">{{obj.titulo_evento}}</h4>
                             <p class="card-text">{{obj.descripcion_evento}}</p>
                         </div>

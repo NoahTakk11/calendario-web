@@ -5,7 +5,7 @@ La aplicación fue realizada especialmente para la ONG "Fundación Pueblo", que 
 Encontrar aquellas personas que colaboren y se involucren en la investigación, reflexión, formulación, ejecución de proyectos y que ello sirva para eliminar la pobreza, el analfabetismo y el desempleo y la posible frustración e inconvenientes de varios recursos entre ellos el tiempo, que eso les puede generar.
 Para esto desarrollamos un producto tecnológico que hacen a estos problemas se solucionen con rapidez y solvencia._
 
-## Construido con 💙
+## Construido con ⚙️
 
 _Tecnologías utilizadas:_
 

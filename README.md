@@ -13,7 +13,7 @@ _Tecnologías utilizadas:_
 * [Python](https://www.python.org/) - Lenguaje de programación usado
 * [Booststrap](https://getbootstrap.com/) - Usado para la parte frontal
 
-## Autores :tw-270f:
+## Autores 📝
 
 - 👨‍💻  Gonzalo Villavicencio
 - 🧑‍🎨  Pablo Traffano

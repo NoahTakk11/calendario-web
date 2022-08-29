@@ -1,6 +1,6 @@
 # Aplicación Web Tipo Calendario: 🌎 Fundación Pueblo
 
-_Este es un proyecto final realizado por estudiantes del Informatorio en la instancia de la segunda etapa correspondiente al curso de Programación y Desarrollo Web.
+_Este es un proyecto final realizado por estudiantes de la comision 4 del Informatorio en la instancia de la segunda etapa correspondiente al curso de Programación y Desarrollo Web.
 La aplicación fue realizada especialmente para la ONG "Fundación Pueblo", que se encuentra en la ciudad de Barranqueras Chaco, teniendo como objetivo principal facilitar la organización de los diferentes eventos que se organizan durante todo el año.
 Encontrar aquellas personas que colaboren y se involucren en la investigación, reflexión, formulación, ejecución de proyectos y que ello sirva para eliminar la pobreza, el analfabetismo y el desempleo y la posible frustración e inconvenientes de varios recursos entre ellos el tiempo, que eso les puede generar.
 Para esto desarrollamos un producto tecnológico que hacen a estos problemas se solucionen con rapidez y solvencia._
